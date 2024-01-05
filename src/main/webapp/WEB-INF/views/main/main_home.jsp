@@ -30,6 +30,7 @@
 			            <li><a href="info_main.do">병원소개</a></li>
 			            <li><a href="review_main.do">리뷰</a></li>
 			            <li><a href="faq_main.do">FAQ</a></li>
+			            <li><a href="product_list.do">애완용품</a></li>
 			            <li><a href="rev_main.do">예약</a></li>
 			            <li><a href="board_main.do">게시판</a></li>
 			          	<c:choose>

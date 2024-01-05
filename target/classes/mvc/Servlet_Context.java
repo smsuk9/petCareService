@@ -11,6 +11,7 @@ import com.pet.care.InfoController;
 import com.pet.care.LoginController;
 import com.pet.care.MainController;
 import com.pet.care.PetController;
+import com.pet.care.ProductController;
 import com.pet.care.FaqController;
 import com.pet.care.RevController;
 import com.pet.care.ReviewController;
@@ -78,5 +79,10 @@ public class Servlet_Context implements WebMvcConfigurer {
 	@Bean
 	public BoardController boardController() {
 		return new BoardController();
+	}
+	
+	@Bean 
+	public ProductController productController() {
+		return new ProductController();
 	}
 }

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import dao.BoardDAO;
 import dao.PetDAO;
+import dao.ProductDAO;
 import dao.FaqDAO;
 import dao.RevDAO;
 import dao.ReviewDAO;
@@ -41,6 +42,11 @@ public class Context_3_dao {
 	@Bean
 	public BoardDAO boardDAO() {
 		return new BoardDAO();
+	}
+	
+	@Bean
+	public ProductDAO productDAO() {
+		return new ProductDAO();
 	}
 
 }
