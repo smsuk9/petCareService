@@ -21,14 +21,15 @@
 				return;
 			}
 		}
-		
-		if(searchContent == ''){
+
+		if (searchContent == '') {
 			alert('내용을 입력해 주세요.');
 			return;
 		}
-		
-		location.href='board_main.do?searchTypeHead='+searchTypeHead+'&searchContent='+searchContent;
-		
+
+		location.href = 'board_main.do?searchTypeHead=' + searchTypeHead
+				+ '&searchContent=' + searchContent;
+
 	}
 </script>
 </head>
@@ -148,14 +149,39 @@
 			<form class="searchform" name="list_search_form">
 				<fieldset>
 					<select id="searchField">
-						<option value="idx">글 번호</option>
-						<option value="title">제목</option>
-						<option value="writter">작성자</option>
+					
+						<c:choose>
+							<c:when test="${searchTypeHead =='idx'}">
+								<option value="idx" selected>글 번호</option>
+							</c:when>
+							<c:otherwise>
+								<option value="idx">글 번호</option>
+							</c:otherwise>
+						</c:choose>
+						
+						<c:choose>
+							<c:when test="${searchTypeHead =='title'}">
+								<option value="title" selected>제목</option>
+							</c:when>
+							<c:otherwise>
+								<option value="title">제목</option>
+							</c:otherwise>
+						</c:choose>
+						
+						<c:choose>
+							<c:when test="${searchTypeHead =='writter'}">
+								<option value="writter" selected>작성자</option>
+							</c:when>
+							<c:otherwise>
+								<option value="writter">작성자</option>
+							</c:otherwise>
+						</c:choose>
+						
 					</select>
 					<c:choose>
-						<c:when test="${searchWord!=null}">
+						<c:when test="${searchContent!=null}">
 							<input class="search" id="searchWord" type="text"
-								value="${searchWord}" placeholder="검색어를 입력하세요">
+								value="${searchContent}" placeholder="검색어를 입력하세요">
 						</c:when>
 						<c:otherwise>
 							<input class="search" id="searchWord" type="text"
